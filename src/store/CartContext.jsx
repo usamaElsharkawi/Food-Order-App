@@ -1,23 +1,3 @@
-// Hello Gemini in this file we will build a cart context
-// what i wanna you to do is to follow  the instructions that in the lines that begining with "Gemini>>" (focus on this lines )
-
-
-
-// Gemini>> 1- import the createContext function from the react library
-// Gemini>> 2- create a cart context with a intial state of {itme:[] , addItem:()=>{},removeItem:()=>{}}
-// Gemini>> 3- Export the cart context as default export
-// Gemini>> 4- create a CartContextProvider component that will wrap the app and provide the cart context
-//       -inside the CartContextProvider component we will use the useReducer hook to manage its state that will be the value of the cart context 
-//       --the reducer function will listen to two actions "ADD_ITEM" and "REMOVE_ITEM"
-//       ---ADD-ITEM:
-//       ----if the item is already in the cart then increase the quantity
-//       ----if the item is not in the cart then add it to the cart with quantity 1
-//       ---REMOVE-ITEM:
-//       ----remove the item from the cart if the quantity is 1
-//       ----decrease the quantity of the item if the quantity is more than 1
-//       --return the new state in immutable way
-// Gemini>> 5- Export the CartContextProvider as named export
-
 import { createContext, useReducer } from "react";
 
 const CartContext = createContext({
