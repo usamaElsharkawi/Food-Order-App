@@ -62,6 +62,10 @@ export function CartContextProvider({ children }) {
     items: [],
   });
 
+  const cartTotalAmount = cartState.items.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
   function addItem(item) {
     dispatchCartAction({ type: "ADD_ITEM", item: item });
   }
@@ -74,6 +78,7 @@ export function CartContextProvider({ children }) {
     items: cartState.items,
     addItem: addItem,
     removeItem: removeItem,
+    totalAmount: cartTotalAmount,
   };
 
   return (
